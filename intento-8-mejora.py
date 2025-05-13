@@ -121,8 +121,15 @@ def agregar_dispositivo(campus_actual):
         if len(partes) == 4 and all(p.isdigit() for p in partes):
             if int(partes[2]) == penultimo and 1 <= int(partes[3]) <= 50:
                 break
-        print("IP inválida. Penúltimo octeto debe ser", penultimo, "y el último entre 1-50")
-
+        print("IP inválida. Penúltimo octeto debe ser", penultimo, "y el último entre 1-50") 
+    if tipo == 4:
+        with open(archivo, "a") as f:
+            f.write("\n-------------------------\n")
+            f.write(f"nombre del dispositivo: {nombre}\n")
+            f.write(f"IP: {ip}\n")
+            f.write("\--------------------------\n")
+        return
+        
     vlans = input("Ingrese las VLANs (separadas por coma): ").split(",")
 
     servicios_opciones = ["Datos", "VLAN", "Trunking"]
@@ -144,6 +151,7 @@ def agregar_dispositivo(campus_actual):
         f.write("\n---------------------------------\n")
         f.write(f"Nombre del dispositivo: {nombre}\n")
         f.write(f"IP: {ip}\n")
+        if tipo != 4:
         f.write(f"Jerarquía: {jerarquia_txt}\n")
         f.write("VLANs: " + ", ".join(vlans) + "\n")
         f.write("Servicios: " + ", ".join(servicios) + "\n")
