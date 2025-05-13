@@ -152,10 +152,10 @@ def agregar_dispositivo(campus_actual):
         f.write(f"Nombre del dispositivo: {nombre}\n")
         f.write(f"IP: {ip}\n")
         if tipo != 4:
-        f.write(f"Jerarquía: {jerarquia_txt}\n")
-        f.write("VLANs: " + ", ".join(vlans) + "\n")
-        f.write("Servicios: " + ", ".join(servicios) + "\n")
-        f.write("---------------------------------\n")
+            f.write(f"Jerarquía: {jerarquia_txt}\n")
+            f.write("VLANs: " + ", ".join(vlans) + "\n")
+            f.write("Servicios: " + ", ".join(servicios) + "\n")
+            f.write("---------------------------------\n")
 
 def eliminar_dispositivos(campus_actual):
     archivo = campus_actual + ".txt"
