@@ -107,7 +107,7 @@ def eliminar_campus():
 
 def agregar_dispositivo(campus_actual):
     archivo = campus_actual + ".txt"
-    print("Tipo de dispositivo:\n1. Router\n2. Switch\n3. Switch Multicapa")
+    print("Tipo de dispositivo:\n1. Router\n2. Switch\n3. Switch Multicapa"\n4. pc")
     tipo = int(input("Opción: "))
     nombre = input("Nombre del dispositivo: ")
     print("Jerarquía:\n1. Núcleo\n2. Distribución\n3. Acceso")
