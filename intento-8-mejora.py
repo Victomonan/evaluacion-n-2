@@ -129,7 +129,7 @@ def agregar_dispositivo(campus_actual):
             f.write(f"IP: {ip}\n")
             f.write("\--------------------------\n")
         return
-        
+    mascara = input("ingresa la mascara de subred(ej: 255.255.255.0)")    
     vlans = input("Ingrese las VLANs (separadas por coma): ").split(",")
 
     servicios_opciones = ["Datos", "VLAN", "Trunking"]
@@ -151,6 +151,7 @@ def agregar_dispositivo(campus_actual):
         f.write("\n---------------------------------\n")
         f.write(f"Nombre del dispositivo: {nombre}\n")
         f.write(f"IP: {ip}\n")
+        f.write(f"mascara:{mascara}\n")
         if tipo != 4:
             f.write(f"Jerarquía: {jerarquia_txt}\n")
             f.write("VLANs: " + ", ".join(vlans) + "\n")
